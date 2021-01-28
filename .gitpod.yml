@@ -7,6 +7,7 @@ ports:
     onOpen: open-preview
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+# curl https://getsubstrate.io -sSf | bash -s -- --fast
 tasks:
   - init: |
       curl https://sh.rustup.rs -sSf | sh -s -- -y
@@ -15,9 +16,12 @@ tasks:
       rustup install stable
       rustup target add wasm32-unknown-unknown --toolchain nightly
       make init
+      cargo install --force --git https://github.com/paritytech/substrate subkey
     command: |
       make init
       make build
+      echo '"make check" && "make build" did not run automatically if there was no prebuild triggered. Please run these commands manually as necessary.'
     prebuild: |
       make init
+      make check
       make build
