@@ -3546,6 +3546,7 @@ dependencies = [
  "pallet-aura",
  "pallet-balances",
  "pallet-grandpa",
+ "pallet-did 2.0.0 (git+https://github.com/substrate-developer-hub/pallet-did)",
  "pallet-randomness-collective-flip",
  "pallet-sudo",
  "pallet-template",
@@ -3768,6 +3769,36 @@ dependencies = [
  "frame-system",
  "parity-scale-codec",
  "serde",
+ "sp-runtime",
+ "sp-std",
+]
+[[package]]
+name = "pallet-did"
+version = "2.0.0"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "pallet-timestamp",
+ "parity-scale-codec",
+ "serde",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+]
+
+[[package]]
+name = "pallet-did"
+version = "2.0.0"
+source = "git+https://github.com/substrate-developer-hub/pallet-did#f736afe328d79c98a609cbd2008fabbaa300c276"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "pallet-timestamp",
+ "parity-scale-codec",
+ "serde",
+ "sp-core",
+ "sp-io",
  "sp-runtime",
  "sp-std",
 ]
